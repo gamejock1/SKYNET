@@ -1,0 +1,59 @@
+
+#chatDisplay {
+  height: 354px;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  overflow-y: scroll;
+  box-shadow:inset rgb(179, 179, 179) 1px 1px 7px;
+  padding: 8px;
+}
+
+#chatTextArea {
+  height: 120px;
+  background: rgb(0, 0, 0);
+  padding: 8px;
+  width: 80%;
+  overflow-y: scroll;
+  box-shadow:inset rgb(179, 179, 179) 1px 1px 7px;
+}
+
+#microphoneIcon {
+  max-width: 100px;
+  width: 100%;
+}
+
+#dictationButton {
+  text-align: right;
+  overflow: hidden;
+  padding-right: 8px;
+  height: 120px;
+  width: 20%;
+  line-height: 120px;
+}
+
+#chatTextEntryAndMic {
+  width: 100%;
+  overflow: hidden;
+  background: rgb(0, 0, 0);
+  display: flex;
+  box-shadow:inset rgb(179, 179, 179) 1px 1px 7px;
+}
+
+#interimTextDisplayLabel {
+  display: none;
+  background: rgb(238, 238, 238);
+  padding: 4px;
+  margin: 0;
+  color: #aaaaaa;
+  font-style: italic;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+#leftSide{
+  max-width: 50%;
+  margin-left: 10%;
+}
+
+#submitToChat {
+  background: rgb(35, 36, 94);
+}

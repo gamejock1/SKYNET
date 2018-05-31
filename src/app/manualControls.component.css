@@ -1,0 +1,25 @@
+
+
+
+#manualControls{
+  text-align: center;
+}
+
+h3{
+  margin:0 0 1% 0;
+  padding-top:2%;
+}
+
+.buttonControls {
+  border-radius: 15px;
+  background:rgb(21, 15, 59);;
+  padding: 0px; 
+  width: 150px;
+  height: 75px; 
+  color: aliceblue;
+  margin: 1%;
+}
+
+.buttonControls:hover{
+  background: rgb(35, 36, 94);
+}
