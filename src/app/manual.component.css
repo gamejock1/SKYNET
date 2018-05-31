@@ -40,7 +40,7 @@
 }
 
 #interimTextDisplayLabel {
-  display: none;
+  /* display: none; */
   background: rgb(238, 238, 238);
   padding: 4px;
   margin: 0;
