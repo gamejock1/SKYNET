@@ -52,6 +52,7 @@ function toggleStartStop() {
         if (e.results[i].isFinal) {
           final += e.results[i][0].transcript;
           console.log('final transcription:', e.results[i][0].transcript);
+          chatTextArea.text(e.results[i][0].transcript);
           chatTextArea.focus();
           if (recognizing === true) {
             toggleStartStop();
@@ -61,7 +62,6 @@ function toggleStartStop() {
           interim += e.results[i][0].transcript;
         }
       }
-      chatTextArea.text(final);
       interimTextDisplay.text(interim);
     };
     chatTextArea.text('');
