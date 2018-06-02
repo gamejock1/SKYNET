@@ -1,7 +1,3 @@
-
-
-
-
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
@@ -48,20 +44,38 @@ function toggleStartStop() {
     recognition.onresult = function(e) {
       final = '';
       interim = '';
+      let takeOff = 'take off',
+        calibrate = 'calibrate',
+        moveLeft = 'move left',
+        moveRight = 'move right',
+        moveUp = 'move up',
+        moveDown = 'move down',
+        moveFront = 'move front',
+        moveBack = 'move back',
+        turnLeft = 'turn left',
+        turnRight = 'turn right',
+        stop = 'stop',
+        land = 'land';
       for (let i = 0; i < e.results.length; ++i) {
         if (e.results[i].isFinal) {
           final += e.results[i][0].transcript;
           console.log('final transcription:', e.results[i][0].transcript);
+
           chatTextArea.focus();
+
           if (recognizing === true) {
             toggleStartStop();
             // transcriptDisplay.toggle();
-          }
-        } else {
+          } else {
           interim += e.results[i][0].transcript;
-        }
+          }
       }
-      chatTextArea.text(final);
+
+
+      if (final.includes(takeOff)) {
+        chatTextArea.text('Taking off!');
+      }
+
       interimTextDisplay.text(interim);
     };
     chatTextArea.text('');
@@ -75,19 +89,39 @@ function startSpeech(){
   console.log("hello");
 };
 
-  // ============= END OF: Speech Recognition Functions ============= \\
+// ============= END OF: Speech Recognition Functions ============= \\
 
 
-  // takes an array and splits along space characters
-  function splitIntoArray(string) {
-    sentenceArray = string.split(' ');
-    return sentenceArray;
+// takes an array and splits along space characters
+function splitIntoArray(string) {
+  sentenceArray = string.split(' ');
+  return sentenceArray;
+}
+
+// grabs current timestamp for use in the chat window display
+function getTimestamp() {
+  return moment().format('hh:mm:ss a');
+}
+
+let oldVal = chatTextArea.val();
+
+function checkChange(){
+  if(chatTextArea.val() !== oldVal) {
+    console.log("value changed");
+    if (chatTextArea.val() === 'Taking off!') {
+      $.get('/api/takeoff/', (data) => {});
+    } else if (chatTextArea.val() === 'Turning Clockwise!') {
+      $.get('/api/clockwise/', (data) => {});
+    } else if (chatTextArea.val() === 'Landing!') {
+      $.get('/api/land/', (data) => {});
+    }
+    oldVal = chatTextArea.val();
+  } else {
+    console.log('nope');
   }
+}
+setInterval(checkChange, 2000);
 
-  // grabs current timestamp for use in the chat window display
-  function getTimestamp() {
-    return moment().format('hh:mm:ss a');
-  }
 
   // utility function to post chat messages to the chat window when submitted
   function createChatLineItem(who, what) {
@@ -161,4 +195,4 @@ function startSpeech(){
             console.log(response);
         });
 }
-// ========================================================\\ 
+// ========================================================\\
