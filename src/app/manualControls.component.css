@@ -14,9 +14,9 @@ h4{
 .buttonControls {
   border-radius: 15px;
   background:rgb(21, 15, 59);;
-  padding: 0px; 
+  padding: 0px;
   width: 100px;
-  height: 50px; 
+  height: 50px;
   color: aliceblue;
   margin: 1%;
   position: relative;
@@ -45,9 +45,9 @@ h4{
 .rotate {
   border-radius: 15px;
   background:rgb(21, 15, 59);;
-  padding: 0px; 
+  padding: 0px;
   width: 100px;
-  height: 50px; 
+  height: 50px;
   color: aliceblue;
   margin: 1%;
   /* float: left; */
@@ -61,9 +61,9 @@ h4{
 #takeOff {
   border-radius: 15px;
   background:rgb(10, 150, 22);;
-  padding: 0px; 
+  padding: 0px;
   width: 100px;
-  height: 50px; 
+  height: 50px;
   color: aliceblue;
   margin: 1%;
   /* float: left; */
@@ -76,9 +76,9 @@ h4{
 #land {
   border-radius: 15px;
   background:rgb(161, 13, 13);;
-  padding: 0px; 
+  padding: 0px;
   width: 100px;
-  height: 50px; 
+  height: 50px;
   color: aliceblue;
   margin: 1%;
   /* float: left; */
@@ -90,8 +90,8 @@ h4{
 
 #video{
   opacity: .50;
-  width: 600px;
-  height: 400px;
+  width: 640px;
+  height: 360px;
   background: firebrick;
   position: absolute;
   top: 20%;
