@@ -77,8 +77,45 @@ function toggleStartStop() {
           }
         }
 
-        if (final === takeOff) {
-          document.getElementById('chatTextArea').innerHTML = "Taking off!";
+        switch (final) {
+          case takeOff:
+            document.getElementById('chatTextArea').innerHTML = "Taking off!";
+            break;
+          case calibrate:
+            document.getElementById('chatTextArea').innerHTML = "Calibrating!";
+            break;
+          case moveLeft:
+            document.getElementById('chatTextArea').innerHTML = "Moving left!";
+            break;
+          case moveRight:
+            document.getElementById('chatTextArea').innerHTML = "Moving right!";
+            break;
+          case moveUp:
+            document.getElementById('chatTextArea').innerHTML = "Moving up!";
+            break;
+          case moveDown:
+            document.getElementById('chatTextArea').innerHTML = "Moving down!";
+            break;
+          case moveFront:
+            document.getElementById('chatTextArea').innerHTML = "Moving front!";
+            break;
+          case moveBack:
+            document.getElementById('chatTextArea').innerHTML = "Moving back!";
+            break;
+          case turnLeft:
+            document.getElementById('chatTextArea').innerHTML = "Turning left!";
+            break;
+          case turnRight:
+            document.getElementById('chatTextArea').innerHTML = "Turning right!";
+            break;
+          case stop:
+            document.getElementById('chatTextArea').innerHTML = "Stopping current command!";
+            break;
+          case land:
+            document.getElementById('chatTextArea').innerHTML = "Landing!";
+            break;
+          default:
+            return 'how you get here???';
         }
 
         interimTextDisplay.text(interim);
