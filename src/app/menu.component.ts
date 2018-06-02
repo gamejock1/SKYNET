@@ -27,5 +27,9 @@ export class TestComponent {
     this.router.navigate(['/manualControls']);
     event.preventDefault()
   }
+  redirectPlan(event){
+    this.router.navigate(['/plan']);
+    event.preventDefault()
+  }
 }
 

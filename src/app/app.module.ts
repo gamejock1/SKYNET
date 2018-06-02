@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './menu.component';
 import { manualComponent } from './manual.component';
 import { manualControlsComponent } from './manualControls.component';
+import { planComponent } from './plan.component';
 import { HttpClientModule } from '@angular/common/http';
 import { manualService } from './services/manual.service';
 
@@ -14,11 +15,13 @@ import { manualService } from './services/manual.service';
     AppComponent,
     TestComponent,
     manualComponent,
-    manualControlsComponent
+    manualControlsComponent,
+    planComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
+      {path: 'plan', component: planComponent},
       {path: 'manualControls', component: manualControlsComponent},
       {path: 'manual', component: manualComponent},
       { path: '', component: TestComponent }
