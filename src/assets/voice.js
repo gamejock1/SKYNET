@@ -1,7 +1,3 @@
-
-
-
-
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
@@ -30,6 +26,11 @@ function reset() {
   micIcon.attr("src", "micOff.png");
 }
 
+function startSpeech(){
+  // transcriptDisplay.toggle();
+  toggleStartStop();
+};
+
 
 function toggleStartStop() {
   if (recognizing === true) {
@@ -45,36 +46,88 @@ function toggleStartStop() {
     micIcon.attr("src", "micOn.png");
     recognizing = true;
     recognition.onend = reset;
-    recognition.onresult = function(e) {
+    recognition.onresult = function (e) {
       final = '';
       interim = '';
+      let takeOff = 'take off',
+        calibrate = 'calibrate',
+        moveLeft = 'move left',
+        moveRight = 'move right',
+        moveUp = 'move up',
+        moveDown = 'move down',
+        moveFront = 'move front',
+        moveBack = 'move back',
+        turnLeft = 'turn left',
+        turnRight = 'turn right',
+        stop = 'stop',
+        land = 'land';
       for (let i = 0; i < e.results.length; ++i) {
         if (e.results[i].isFinal) {
           final += e.results[i][0].transcript;
-          testSpeech(e.results[i][0].transcript);
-          getCommandString();
-          chatTextArea.text(e.results[i][0].transcript);
+
+          console.log('final transcription:', e.results[i][0].transcript);
+
           chatTextArea.focus();
+
           if (recognizing === true) {
             toggleStartStop();
             // transcriptDisplay.toggle();
+          } else {
+            interim += e.results[i][0].transcript;
           }
-        } else {
-          interim += e.results[i][0].transcript;
         }
+
+        switch (final) {
+          case takeOff:
+            document.getElementById('chatTextArea').innerHTML = "Taking off!";
+            break;
+          case calibrate:
+            document.getElementById('chatTextArea').innerHTML = "Calibrating!";
+            break;
+          case moveLeft:
+            document.getElementById('chatTextArea').innerHTML = "Moving left!";
+            break;
+          case moveRight:
+            document.getElementById('chatTextArea').innerHTML = "Moving right!";
+            break;
+          case moveUp:
+            document.getElementById('chatTextArea').innerHTML = "Moving up!";
+            break;
+          case moveDown:
+            document.getElementById('chatTextArea').innerHTML = "Moving down!";
+            break;
+          case moveFront:
+            document.getElementById('chatTextArea').innerHTML = "Moving front!";
+            break;
+          case moveBack:
+            document.getElementById('chatTextArea').innerHTML = "Moving back!";
+            break;
+          case turnLeft:
+            document.getElementById('chatTextArea').innerHTML = "Turning left!";
+            break;
+          case turnRight:
+            document.getElementById('chatTextArea').innerHTML = "Turning right!";
+            break;
+          case stop:
+            document.getElementById('chatTextArea').innerHTML = "Stopping current command!";
+            break;
+          case land:
+            document.getElementById('chatTextArea').innerHTML = "Landing!";
+            break;
+          default:
+            return 'how you get here???';
+        }
+
+        interimTextDisplay.text(interim);
       }
-      interimTextDisplay.text(interim);
-    };
-    chatTextArea.text('');
-    interimTextDisplay.text('');
+      chatTextArea.text('');
+      interimTextDisplay.text('');
+    }
   }
 }
 
 
 
-function testSpeech(val){
-  document.getElementById('chatTextArea').innerHTML = val;
-}
 
 
 
@@ -85,22 +138,18 @@ function testSpeech(val){
 
 
 
-function startSpeech(){
-  // transcriptDisplay.toggle();
-  toggleStartStop();
-  console.log("hello");
-};
-
-  // ============= END OF: Speech Recognition Functions ============= \\
 
 
-  // takes an array and splits along space characters
+// ============= END OF: Speech Recognition Functions ============= \\
+
+
+// takes an array and splits along space characters
   function splitIntoArray(string) {
     sentenceArray = string.split(' ');
     return sentenceArray;
   }
 
-  // grabs current timestamp for use in the chat window display
+// grabs current timestamp for use in the chat window display
   function getTimestamp() {
     return moment().format('hh:mm:ss a');
   }
@@ -119,8 +168,8 @@ function startSpeech(){
     itemWhen.addClass('timestamp').text(' (' + getTimestamp() + '): ');
     chatDisplay.append(itemWho, itemWhen, what, '<br>')
       .animate({
-      scrollTop: chatDisplay[0].scrollHeight - chatDisplay[0].clientHeight
-    }, 300);
+        scrollTop: chatDisplay[0].scrollHeight - chatDisplay[0].clientHeight
+      }, 300);
   }
 
   // onPageLoadInitialize();
@@ -162,26 +211,4 @@ function startSpeech(){
 
 
 
-  function getCommandString(){
-    // console.log(document.getElementById('chatTextArea').innerHTML);
-    document.getElementById('chatTextArea').click();
-  }
 
-
-
-
-
-  // =============== For Reference ======================\\
-  function apicall() {
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=dog&api_key=cIzQ2aJwHt8s72O4ZDpwXVX8LpRi78L1&limit=10";
-
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
-        .then(function (response) {
-            console.log(queryURL);
-            console.log(response);
-        });
-}
-// ========================================================\\ 
