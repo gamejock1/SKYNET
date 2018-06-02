@@ -26,6 +26,11 @@ function reset() {
   micIcon.attr("src", "micOff.png");
 }
 
+function startSpeech(){
+  // transcriptDisplay.toggle();
+  toggleStartStop();
+};
+
 
 function toggleStartStop() {
   if (recognizing === true) {
@@ -41,7 +46,7 @@ function toggleStartStop() {
     micIcon.attr("src", "micOn.png");
     recognizing = true;
     recognition.onend = reset;
-    recognition.onresult = function(e) {
+    recognition.onresult = function (e) {
       final = '';
       interim = '';
       let takeOff = 'take off',
@@ -62,36 +67,30 @@ function toggleStartStop() {
 
           console.log('final transcription:', e.results[i][0].transcript);
 
-          testSpeech(e.results[i][0].transcript);
-          getCommandString();
-          chatTextArea.text(e.results[i][0].transcript);
-
           chatTextArea.focus();
 
           if (recognizing === true) {
             toggleStartStop();
             // transcriptDisplay.toggle();
           } else {
-          interim += e.results[i][0].transcript;
+            interim += e.results[i][0].transcript;
           }
-      }
+        }
 
-      if (final.includes(takeOff)) {
-        chatTextArea.text('Taking off!');
-      }
+        if (final === takeOff) {
+          document.getElementById('chatTextArea').innerHTML = "Taking off!";
+        }
 
-      interimTextDisplay.text(interim);
+        interimTextDisplay.text(interim);
+      }
+      chatTextArea.text('');
+      interimTextDisplay.text('');
     }
-    chatTextArea.text('');
-    interimTextDisplay.text('');
   }
 }
 
 
 
-function testSpeech(val){
-  document.getElementById('chatTextArea').innerHTML = val;
-}
 
 
 
@@ -102,45 +101,21 @@ function testSpeech(val){
 
 
 
-function startSpeech(){
-  // transcriptDisplay.toggle();
-  toggleStartStop();
-  console.log("hello");
-};
+
 
 // ============= END OF: Speech Recognition Functions ============= \\
 
 
 // takes an array and splits along space characters
-function splitIntoArray(string) {
-  sentenceArray = string.split(' ');
-  return sentenceArray;
-}
+  function splitIntoArray(string) {
+    sentenceArray = string.split(' ');
+    return sentenceArray;
+  }
 
 // grabs current timestamp for use in the chat window display
-function getTimestamp() {
-  return moment().format('hh:mm:ss a');
-}
-
-let oldVal = chatTextArea.val();
-
-function checkChange(){
-  if(chatTextArea.val() !== oldVal) {
-    console.log("value changed");
-    if (chatTextArea.val() === 'Taking off!') {
-      $.get('/api/takeoff/', (data) => {});
-    } else if (chatTextArea.val() === 'Turning Clockwise!') {
-      $.get('/api/clockwise/', (data) => {});
-    } else if (chatTextArea.val() === 'Landing!') {
-      $.get('/api/land/', (data) => {});
-    }
-    oldVal = chatTextArea.val();
-  } else {
-    console.log('nope');
+  function getTimestamp() {
+    return moment().format('hh:mm:ss a');
   }
-}
-setInterval(checkChange, 2000);
-
 
   // utility function to post chat messages to the chat window when submitted
   function createChatLineItem(who, what) {
@@ -156,8 +131,8 @@ setInterval(checkChange, 2000);
     itemWhen.addClass('timestamp').text(' (' + getTimestamp() + '): ');
     chatDisplay.append(itemWho, itemWhen, what, '<br>')
       .animate({
-      scrollTop: chatDisplay[0].scrollHeight - chatDisplay[0].clientHeight
-    }, 300);
+        scrollTop: chatDisplay[0].scrollHeight - chatDisplay[0].clientHeight
+      }, 300);
   }
 
   // onPageLoadInitialize();
@@ -199,26 +174,4 @@ setInterval(checkChange, 2000);
 
 
 
-  function getCommandString(){
-    // console.log(document.getElementById('chatTextArea').innerHTML);
-    document.getElementById('chatTextArea').click();
-  }
 
-
-
-
-
-  // =============== For Reference ======================\\
-  function apicall() {
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=dog&api_key=cIzQ2aJwHt8s72O4ZDpwXVX8LpRi78L1&limit=10";
-
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
-        .then(function (response) {
-            console.log(queryURL);
-            console.log(response);
-        });
-}
-// ========================================================\\
