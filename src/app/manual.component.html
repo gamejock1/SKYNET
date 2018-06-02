@@ -1,24 +1,68 @@
 <button (click)='turnLeft()'>service test</button>
 
-<h1>Voice Flight Control</h1>
+<!-- <h1>Voice Flight Control</h1> -->
+
+
+<div id="actionButton">
+
+  <button id="takeOff" href="">Take off!</button>
+
+  <button id="land" href="">Land</button>
+
+  <button class="rotate" href="">Rotate Left</button>
+
+  <button class="rotate" href="">Rotate Right</button>
+
+  <button class="rotate" href="">Move Up</button>
+
+  <button class="rotate" href="">Move Down</button>
+
+</div>
+  
+  
+  
+
+  
 
 <div id="video">
-
+  <iframe src="http://localhost:8020/DroneImage.html" height="360" width="640" name="iframe_DroneImage"></iframe>
 </div>
 
 
 
 
-<!-- Command Dictation Section -->
-<div id="leftSide" class="col s11 m11 l5">
-  <div id="speech" class="input-field col s12 row">
-    <div id="chatTextEntryAndMic">
+<div id="directions">
+  <div>
+    <button class="buttonControls" id="front" href="">Move Front</button>
+  </div>
 
-      <div #chatText id="chatTextArea" (click)="getCommandString(chatText)" contenteditable="true"></div>
+  <div>
+    <button class="buttonControls leftRight" href="">Move Left</button>
+    <button class="buttonControls leftRight" href="">Move Right</button>
+  </div>
 
-      <div id="dictationButton">
-        <img onClick="startSpeech()" src="../assets/micOff.png" id="microphoneIcon">
+  <div>
+    <button class="buttonControls" id="back" href="">Move Back</button>
+  </div>
+</div>
+
+
+
+
+  <div id="leftSide" class="col s11 m11 l5">
+    <div id="speech" class="input-field col s12 row">
+      <div id="chatTextEntryAndMic">
+        
+        <div #chatText id="chatTextArea" (click)="getCommandString(chatText)" contenteditable="true"></div>
+        
+        <div id="dictationButton">
+          <img onClick="startSpeech()" src="../assets/micOff.png" id="microphoneIcon">
+        </div>
       </div>
     </div>
   </div>
-</div>
+  
+
+
+
+

@@ -5,7 +5,7 @@ h1{
   margin: 0%;
 }
 
-#video{
+/* #video{
   opacity: .50;
   width: 600px;
   height: 400px;
@@ -14,10 +14,7 @@ h1{
   top: 24%;
   right: 29%;
 }
-
-
-
-
+ */
 
 #chatDisplay {
   height: 354px;
@@ -71,9 +68,127 @@ h1{
 
 #leftSide{
   max-width: 50%;
-  margin: 32% 0 10% 25%;
+  margin: 6% 0 10% 25%;
 }
 
 #submitToChat {
   background: rgb(35, 36, 94);
+}
+
+
+
+
+
+
+
+
+
+
+#manualControls{
+  /* text-align: center; */
+}
+
+h4{
+  text-align: center;
+  margin:0 0 1% 0;
+  padding-top:2%;
+}
+
+.buttonControls {
+  border-radius: 15px;
+  background:rgb(21, 15, 59);;
+  padding: 0px;
+  width: 100px;
+  height: 50px;
+  color: aliceblue;
+  margin: 1%;
+  position: relative;
+}
+
+.buttonControls:hover{
+  background: rgb(45, 47, 124);
+}
+
+.leftRight{
+  margin: 0 3.25%;
+}
+
+#front{
+  margin: 3% 10%;
+}
+
+#back{
+  margin: 3% 10%;
+}
+
+#directions{
+  text-align: left;
+  margin-top: 2%;
+}
+
+.rotate {
+  border-radius: 15px;
+  background:rgb(21, 15, 59);;
+  padding: 0px;
+  width: 100px;
+  height: 50px;
+  color: aliceblue;
+  margin: 1%;
+  /* float: left; */
+}
+
+.rotate:hover{
+  background: rgb(45, 47, 124);
+}
+
+
+#takeOff {
+  border-radius: 15px;
+  background:rgb(10, 150, 22);;
+  padding: 0px;
+  width: 100px;
+  height: 50px;
+  color: aliceblue;
+  margin: 1%;
+  /* float: left; */
+}
+
+#takeOff:hover{
+  background: rgb(17, 218, 17);
+}
+
+#land {
+  border-radius: 15px;
+  background:rgb(161, 13, 13);;
+  padding: 0px;
+  width: 100px;
+  height: 50px;
+  color: aliceblue;
+  margin: 1%;
+  /* float: left; */
+}
+
+#land:hover{
+  background: rgb(235, 35, 35);
+}
+
+#video{
+  opacity: .50;
+  width: 640px;
+  height: 360px;
+  background: firebrick;
+  position: absolute;
+  top: 25%;
+  right: 27.5%;
+}
+
+#speech{
+  float: center;
+}
+
+
+
+#actionButton{
+  padding-top: 0px;
+  text-align: center;
 }
