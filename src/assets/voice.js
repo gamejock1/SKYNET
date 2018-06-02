@@ -51,7 +51,9 @@ function toggleStartStop() {
       for (let i = 0; i < e.results.length; ++i) {
         if (e.results[i].isFinal) {
           final += e.results[i][0].transcript;
-          console.log('final transcription:', e.results[i][0].transcript);
+          testSpeech(e.results[i][0].transcript);
+          getCommandString();
+          chatTextArea.text(e.results[i][0].transcript);
           chatTextArea.focus();
           if (recognizing === true) {
             toggleStartStop();
@@ -61,13 +63,27 @@ function toggleStartStop() {
           interim += e.results[i][0].transcript;
         }
       }
-      chatTextArea.text(final);
       interimTextDisplay.text(interim);
     };
     chatTextArea.text('');
     interimTextDisplay.text('');
   }
 }
+
+
+
+function testSpeech(val){
+  document.getElementById('chatTextArea').innerHTML = val;
+}
+
+
+
+
+
+
+
+
+
 
 function startSpeech(){
   // transcriptDisplay.toggle();
@@ -143,6 +159,13 @@ function startSpeech(){
     chatSubmitHandler();
   });
 
+
+
+
+  function getCommandString(){
+    // console.log(document.getElementById('chatTextArea').innerHTML);
+    document.getElementById('chatTextArea').click();
+  }
 
 
 

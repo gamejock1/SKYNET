@@ -24,5 +24,10 @@ export class manualComponent {
     })
   }
 
+  getCommandString(value : HTMLDivElement){
+    console.log("chat value: " + value.innerHTML)
+  };
+
+
 }
 

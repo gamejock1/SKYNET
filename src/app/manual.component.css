@@ -1,4 +1,24 @@
 
+
+h1{
+  text-align: center;
+  margin: 0%;
+}
+
+#video{
+  opacity: .50;
+  width: 600px;
+  height: 400px;
+  background: firebrick;
+  position: absolute;
+  top: 24%;
+  right: 29%;
+}
+
+
+
+
+
 #chatDisplay {
   height: 354px;
   width: 100%;
@@ -51,7 +71,7 @@
 
 #leftSide{
   max-width: 50%;
-  margin-left: 10%;
+  margin: 32% 0 10% 25%;
 }
 
 #submitToChat {
