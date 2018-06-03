@@ -1,8 +1,6 @@
-
-
 h1{
   text-align: center;
-  margin: 0%;
+  margin: 0;
 }
 
 /* #video{
@@ -56,15 +54,15 @@ h1{
   box-shadow:inset rgb(179, 179, 179) 1px 1px 7px;
 }
 
-#interimTextDisplayLabel {
-  /* display: none; */
-  background: rgb(238, 238, 238);
-  padding: 4px;
-  margin: 0;
-  color: #aaaaaa;
-  font-style: italic;
-  border-bottom: 1px solid #aaaaaa;
-}
+/*#interimTextDisplayLabel {*/
+  /*!* display: none; *!*/
+  /*background: rgb(238, 238, 238);*/
+  /*padding: 4px;*/
+  /*margin: 0;*/
+  /*color: #aaaaaa;*/
+  /*font-style: italic;*/
+  /*border-bottom: 1px solid #aaaaaa;*/
+/*}*/
 
 #leftSide{
   max-width: 50%;
@@ -75,18 +73,9 @@ h1{
   background: rgb(35, 36, 94);
 }
 
-
-
-
-
-
-
-
-
-
-#manualControls{
-  /* text-align: center; */
-}
+/*#manualControls{*/
+  /*!* text-align: center; *!*/
+/*}*/
 
 h4{
   text-align: center;
@@ -97,7 +86,7 @@ h4{
 .buttonControls {
   border-radius: 15px;
   background:rgb(21, 15, 59);;
-  padding: 0px;
+  padding: 0;
   width: 100px;
   height: 50px;
   color: aliceblue;
@@ -113,11 +102,11 @@ h4{
   margin: 0 3.25%;
 }
 
-#front{
+#moveFront{
   margin: 3% 10%;
 }
 
-#back{
+#moveBack{
   margin: 3% 10%;
 }
 
@@ -126,15 +115,14 @@ h4{
   margin-top: 2%;
 }
 
-.rotate {
+.buttonGeneral {
   border-radius: 15px;
   background:rgb(21, 15, 59);;
-  padding: 0px;
+  padding: 0;
   width: 100px;
   height: 50px;
   color: aliceblue;
   margin: 1%;
-  /* float: left; */
 }
 
 .rotate:hover{
@@ -145,12 +133,11 @@ h4{
 #takeOff {
   border-radius: 15px;
   background:rgb(10, 150, 22);;
-  padding: 0px;
+  padding: 0;
   width: 100px;
   height: 50px;
   color: aliceblue;
   margin: 1%;
-  /* float: left; */
 }
 
 #takeOff:hover{
@@ -160,12 +147,11 @@ h4{
 #land {
   border-radius: 15px;
   background:rgb(161, 13, 13);;
-  padding: 0px;
+  padding: 0;
   width: 100px;
   height: 50px;
   color: aliceblue;
   margin: 1%;
-  /* float: left; */
 }
 
 #land:hover{
@@ -186,9 +172,7 @@ h4{
   float: center;
 }
 
-
-
 #actionButton{
-  padding-top: 0px;
+  padding-top: 0;
   text-align: center;
 }
