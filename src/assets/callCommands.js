@@ -118,62 +118,62 @@ $( document ).ready(function() {
 
   const takeOff = () => {
     console.log('TAKE OFF!');
-    $.get('http://localhost:8080/api/takeoff', (data) => {});
+    $.get('https://localhost:8002/api/takeoff', (data) => {});
   };
 
   const calibrate = () => {
     console.log('CALIBRATE!');
-    $.get('http://localhost:8080/api/calibrate', (data) => {});
+    $.get('https://localhost:8002/api/calibrate', (data) => {});
   };
 
   const moveLeft = () => {
     console.log('MOVE LEFT!');
-    $.get('http://localhost:8080/api/move-left', (data) => {});
+    $.get('https://localhost:8002/api/move-left', (data) => {});
   };
 
   const moveRight = () => {
     console.log('MOVE RIGHT!');
-    $.get('http://localhost:8080/api/move-right', (data) => {});
+    $.get('https://localhost:8002/api/move-right', (data) => {});
   }
 
   const moveUp = () => {
     console.log('MOVE UP!');
-    $.get('http://localhost:8080/api/move-up', (data) => {});
+    $.get('https://localhost:8002/api/move-up', (data) => {});
   }
 
   const moveDown = () => {
     console.log('MOVE DOWN!');
-    $.get('http://localhost:8080/api/move-down', (data) => {});
+    $.get('https://localhost:8002/api/move-down', (data) => {});
   }
 
   const moveFront = () => {
     console.log('MOVE FRONT!');
-    $.get('http://localhost:8080/api/move-front', (data) => {});
+    $.get('https://localhost:8002/api/move-front', (data) => {});
   }
 
   const moveBack = () => {
     console.log('MOVE BACK!');
-    $.get('http://localhost:8080/api/move-back', (data) => {});
+    $.get('https://localhost:8002/api/move-back', (data) => {});
   }
 
   const turnLeft = () => {
     console.log('TURN LEFT!');
-    $.get('http://localhost:8080/api/turn-left', (data) => {});
+    $.get('https://localhost:8002/api/turn-left', (data) => {});
   }
 
   const turnRight = () => {
     console.log('TURN RIGHT!');
-    $.get('http://localhost:8080/api/turn-right', (data) => {});
+    $.get('https://localhost:8002/api/turn-right', (data) => {});
   }
 
   const stop = () => {
     console.log('STOP!');
-    $.get('http://localhost:8080/api/stop', (data) => {});
+    $.get('https://localhost:8002/api/stop', (data) => {});
   }
 
   const land = () => {
     console.log('LAND!');
-    $.get('http://localhost:8080/api/land', (data) => {});
+    $.get('https://localhost:8002/api/land', (data) => {});
   }
 
 
