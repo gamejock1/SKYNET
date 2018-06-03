@@ -9,58 +9,52 @@
 
   <button id="land" >Land</button>
 
-  <button class="rotate" >Rotate Left</button>
+  <button id="turnLeft" class="rotate" >Rotate Left</button>
 
-  <button class="rotate" >Rotate Right</button>
+  <button id="turnRight" class="rotate" >Rotate Right</button>
 
-  <button class="rotate" >Move Up</button>
+  <button id="moveUp" class="rotate" >Move Up</button>
 
-  <button class="rotate" >Move Down</button>
+  <button id="moveDown" class="rotate" >Move Down</button>
+
+  <button id="calibrate" >Calibrate</button>
+
+  <button id="stop" >Stop</button>
 
 </div>
-
-
-
-
-
 
 <div id="video">
   <iframe src="https://localhost:8020/DroneImage.html" height="360" width="640" name="iframe_DroneImage"></iframe>
 </div>
 
-
-
-
 <div id="directions">
   <div>
-    <button class="buttonControls" id="front" >Move Front</button>
+    <button id="moveFront" class="buttonControls" >Move Front</button>
   </div>
 
   <div>
-    <button class="buttonControls leftRight" >Move Left</button>
-    <button class="buttonControls leftRight" >Move Right</button>
+    <button id="moveLeft" class="buttonControls leftRight" >Move Left</button>
+    <button id="moveRight" class="buttonControls leftRight" >Move Right</button>
   </div>
 
   <div>
-    <button class="buttonControls" id="back" >Move Back</button>
+    <button id="moveBack" class="buttonControls" >Move Back</button>
+
   </div>
 </div>
 
+<div id="leftSide" class="col s11 m11 l5">
+  <div id="speech" class="input-field col s12 row">
+    <div id="chatTextEntryAndMic">
 
+      <div #chatText id="chatTextArea" (click)="getCommandString(chatText)" contenteditable="true"></div>
 
-
-  <div id="leftSide" class="col s11 m11 l5">
-    <div id="speech" class="input-field col s12 row">
-      <div id="chatTextEntryAndMic">
-
-        <div #chatText id="chatTextArea" (click)="getCommandString(chatText)" contenteditable="true"></div>
-
-        <div id="dictationButton">
-          <img onClick="startSpeech()" src="../assets/micOff.png" id="microphoneIcon">
-        </div>
+      <div id="dictationButton">
+        <img onClick="startSpeech()" src="../assets/micOff.png" id="microphoneIcon">
       </div>
     </div>
   </div>
+</div>
 
 
 
