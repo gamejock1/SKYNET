@@ -81,7 +81,6 @@ $( document ).ready(function() {
     if(chatTextAreaDisplay.innerHTML !== oldVal) {
       console.log("value changed");
 
-
       if (chatTextAreaDisplay.innerHTML === 'Taking off!') {
         takeOff();
       } else if (chatTextAreaDisplay.innerHTML === 'Calibrating!') {
@@ -134,48 +133,46 @@ $( document ).ready(function() {
   const moveRight = () => {
     console.log('MOVE RIGHT!');
     $.get('https://localhost:8002/api/move-right', (data) => {});
-  }
+  };
 
   const moveUp = () => {
     console.log('MOVE UP!');
     $.get('https://localhost:8002/api/move-up', (data) => {});
-  }
+  };
 
   const moveDown = () => {
     console.log('MOVE DOWN!');
     $.get('https://localhost:8002/api/move-down', (data) => {});
-  }
+  };
 
   const moveFront = () => {
     console.log('MOVE FRONT!');
     $.get('https://localhost:8002/api/move-front', (data) => {});
-  }
+  };
 
   const moveBack = () => {
     console.log('MOVE BACK!');
     $.get('https://localhost:8002/api/move-back', (data) => {});
-  }
+  };
 
   const turnLeft = () => {
     console.log('TURN LEFT!');
     $.get('https://localhost:8002/api/turn-left', (data) => {});
-  }
+  };
 
   const turnRight = () => {
     console.log('TURN RIGHT!');
     $.get('https://localhost:8002/api/turn-right', (data) => {});
-  }
+  };
 
   const stop = () => {
     console.log('STOP!');
     $.get('https://localhost:8002/api/stop', (data) => {});
-  }
+  };
 
   const land = () => {
     console.log('LAND!');
     $.get('https://localhost:8002/api/land', (data) => {});
-  }
-
-
+  };
 
 });
