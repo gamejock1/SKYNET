@@ -1,4 +1,0 @@
-run:
-  web: 
-  		- echo "hello"
-  		- echo "multiple line command works"
