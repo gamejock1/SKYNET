@@ -17,9 +17,9 @@
 .buttons {
   border-radius: 15px;
   background:rgb(21, 15, 59);;
-  padding: 20px; 
+  padding: 20px;
   width: 200px;
-  height: 150px; 
+  height: 150px;
   color: aliceblue;
   margin: 2%;
 }
@@ -29,10 +29,11 @@
 }
 
 #insideNavFooter{
- background-image: url(https://images7.alphacoders.com/601/601841.jpg);
- background-position: center;
+ background-color: black;
+ background-image: url(assets/terminator_bg.jpg);
+ background-position: right;
  background-repeat: no-repeat;
- background-size: cover;
+ background-size: contain;
  height: 100%;
 }
 
