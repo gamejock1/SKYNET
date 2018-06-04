@@ -1,3 +1,4 @@
+
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
@@ -6,11 +7,7 @@ let submitToChat = $('#submitToChat');
 let chatTextArea = $('#chatTextArea');
 let interimTextDisplay = $('#interimTextDisplay');
 let dictationButton = $('#dictationButton');
-let chatDisplay = $('#chatDisplay');
-let transcriptDisplay = $('#interimTextDisplayLabel');
 let micIcon = $('#microphoneIcon');
-let validatorWindowExpanded = false;
-
 
 let idText;
 let classText;
@@ -19,18 +16,14 @@ let final;
 let interim;
 let recognizing;
 
-
-
 function reset() {
   recognizing = false;
   micIcon.attr("src", "micOff.png");
 }
 
 function startSpeech(){
-  // transcriptDisplay.toggle();
   toggleStartStop();
-};
-
+}
 
 function toggleStartStop() {
   if (recognizing === true) {
@@ -49,70 +42,66 @@ function toggleStartStop() {
     recognition.onresult = function (e) {
       final = '';
       interim = '';
-      let takeOff = 'take off',
-        calibrate = 'calibrate',
-        moveLeft = 'move left',
-        moveRight = 'move right',
-        moveUp = 'move up',
-        moveDown = 'move down',
-        moveFront = 'move front',
-        moveBack = 'move back',
-        turnLeft = 'turn left',
-        turnRight = 'turn right',
-        stop = 'stop',
-        land = 'land';
       for (let i = 0; i < e.results.length; ++i) {
         if (e.results[i].isFinal) {
           final += e.results[i][0].transcript;
-
           console.log('final transcription:', e.results[i][0].transcript);
-
           chatTextArea.focus();
-
           if (recognizing === true) {
             toggleStartStop();
-            // transcriptDisplay.toggle();
           } else {
             interim += e.results[i][0].transcript;
           }
         }
 
         switch (final) {
-          case takeOff:
+          case 'take off':
             document.getElementById('chatTextArea').innerHTML = "Taking off!";
+            takeOff();
             break;
-          case calibrate:
+          case 'calibrate':
             document.getElementById('chatTextArea').innerHTML = "Calibrating!";
+            calibrate();
             break;
-          case moveLeft:
+          case 'move left':
             document.getElementById('chatTextArea').innerHTML = "Moving left!";
+            moveLeft();
             break;
-          case moveRight:
+          case 'move right':
             document.getElementById('chatTextArea').innerHTML = "Moving right!";
+            moveRight();
             break;
-          case moveUp:
+          case 'move up':
             document.getElementById('chatTextArea').innerHTML = "Moving up!";
+            moveUp();
             break;
-          case moveDown:
+          case 'move down':
             document.getElementById('chatTextArea').innerHTML = "Moving down!";
+            moveDown();
             break;
-          case moveFront:
+          case 'move front':
             document.getElementById('chatTextArea').innerHTML = "Moving front!";
+            moveFront();
             break;
-          case moveBack:
+          case 'move back':
             document.getElementById('chatTextArea').innerHTML = "Moving back!";
+            moveBack();
             break;
-          case turnLeft:
+          case 'turn left':
             document.getElementById('chatTextArea').innerHTML = "Turning left!";
+            turnLeft();
             break;
-          case turnRight:
+          case 'turn right':
             document.getElementById('chatTextArea').innerHTML = "Turning right!";
+            turnRight();
             break;
-          case stop:
+          case 'stop':
             document.getElementById('chatTextArea').innerHTML = "Stopping current command!";
+            stop();
             break;
-          case land:
+          case 'land':
             document.getElementById('chatTextArea').innerHTML = "Landing!";
+            land();
             break;
           default:
             return 'how you get here???';
@@ -126,89 +115,8 @@ function toggleStartStop() {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ============= END OF: Speech Recognition Functions ============= \\
-
-
-// takes an array and splits along space characters
-  function splitIntoArray(string) {
-    sentenceArray = string.split(' ');
-    return sentenceArray;
-  }
-
-// grabs current timestamp for use in the chat window display
-  function getTimestamp() {
-    return moment().format('hh:mm:ss a');
-  }
-
-  // utility function to post chat messages to the chat window when submitted
-  function createChatLineItem(who, what) {
-    let itemWho = $('<span>');
-    if (who === 'You') {
-      itemWho.addClass('userChat');
-    }
-    else {
-      itemWho.addClass('computerChat');
-    }
-    itemWho.text(who);
-    let itemWhen = $('<span>');
-    itemWhen.addClass('timestamp').text(' (' + getTimestamp() + '): ');
-    chatDisplay.append(itemWho, itemWhen, what, '<br>')
-      .animate({
-        scrollTop: chatDisplay[0].scrollHeight - chatDisplay[0].clientHeight
-      }, 300);
-  }
-
-  // onPageLoadInitialize();
-
-  function chatSubmitHandler() {
-    submittedChat = chatTextArea.text().trim();
-    chatTextArea.empty();
-    console.log(submittedChat);
-    createChatLineItem('You', submittedChat);
-    splitIntoArray(submittedChat);
-    spellCheck();
-    console.log('spell-check complete!');
-    console.log(sentenceArray);
-    recognition = '';
-  }
-
-  // ============= Utility Event Handlers ============= \\
-  // click handler to start or stop voice-to-text dictation
-  dictationButton.on('click', function(){
-    transcriptDisplay.toggle();
-    toggleStartStop();
-  });
-
-  // enter button handler when chat box is in focus
-  chatTextArea.keypress(function(event) {
-    if (event.which === 13) {
-      document.execCommand('insertHTML', false, '<div></div>');
-      chatSubmitHandler();
-      return false;
-    }
-  });
-
-  // submit button handler
-  submitToChat.on('click', function() {
-    event.preventDefault();
-    chatSubmitHandler();
-  });
-
-
-
-
-
+// click handler to start or stop voice-to-text dictation
+dictationButton.on('click', function(){
+  transcriptDisplay.toggle();
+  toggleStartStop();
+});

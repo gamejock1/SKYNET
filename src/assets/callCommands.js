@@ -61,51 +61,6 @@ const land = () => {
 
 console.log( "ready!" );
 
-$( document ).ready(function() {
-
-  let chatTextAreaDisplay = document.getElementById('chatTextArea');
-  let oldVal = chatTextAreaDisplay.innerHTML;
-
-  function checkChange() {
-
-    if (chatTextAreaDisplay.innerHTML !== oldVal) {
-      console.log("value changed");
-
-      if (chatTextAreaDisplay.innerHTML === 'Taking off!') {
-        takeOff();
-      } else if (chatTextAreaDisplay.innerHTML === 'Calibrating!') {
-        calibrate();
-      } else if (chatTextAreaDisplay.innerHTML === 'Moving left!') {
-        moveLeft();
-      } else if (chatTextAreaDisplay.innerHTML === 'Moving right!') {
-        moveRight();
-      } else if (chatTextAreaDisplay.innerHTML === 'Moving up!') {
-        moveUp();
-      } else if (chatTextAreaDisplay.innerHTML === 'Moving down!') {
-        moveDown();
-      } else if (chatTextAreaDisplay.innerHTML === 'Moving front!') {
-        moveFront();
-      } else if (chatTextAreaDisplay.innerHTML === 'Moving back!') {
-        moveBack();
-      } else if (chatTextAreaDisplay.innerHTML === 'Turning left!') {
-        turnLeft();
-      } else if (chatTextAreaDisplay.innerHTML === 'Turning right!') {
-        turnRight();
-      } else if (chatTextAreaDisplay.innerHTML === 'Stopping current command!') {
-        stop();
-      } else if (chatTextAreaDisplay.innerHTML === 'Landing!') {
-        land();
-      }
-      oldVal = chatTextAreaDisplay.innerHTML;
-    } else {
-      console.log('nope');
-    }
-  }
-
-  setInterval(checkChange, 2000);
-
-});
-
 // TAKE OFF BUTTON
 $(document).on('click', '#takeOff', (event) => {
   event.preventDefault();
@@ -177,13 +132,3 @@ $(document).on('click', '#land', (event) => {
   event.preventDefault();
   land();
 });
-
-
-
-
-
-
-
-
-
-
