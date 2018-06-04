@@ -9,8 +9,28 @@ h6{
   float: left;
 }
 
+#create{
+float: left;
+margin-left: 105px;
+border-radius: 15px;
+background:rgb(21, 15, 59);
+width: 75px;
+height: 20px;
+color: aliceblue;
+}
+
+#save{
+float: left;
+margin-left: 204px;
+border-radius: 15px;
+background:rgb(21, 15, 59);
+width: 75px;
+height: 20px;
+color: aliceblue;
+}
+
 #param{
-  margin: 0 0 0 18.4%;
+  margin: 0 0 0 54px;
 }
 
 #plans{
@@ -61,7 +81,7 @@ h6{
   background: rgb(45, 47, 124);
 }
 
-#takeOff {
+#takeOffFP {
   border-radius: 15px;
   background:rgb(10, 150, 22);;
   padding: 0px;
@@ -72,11 +92,11 @@ h6{
   /* float: left; */
 }
 
-#takeOff:hover{
+#takeOffFP:hover{
   background: rgb(17, 218, 17);
 }
 
-#land {
+#landFP {
   border-radius: 15px;
   background:rgb(161, 13, 13);;
   padding: 0px;
@@ -87,6 +107,21 @@ h6{
   /* float: left; */
 }
 
-#land:hover{
+#landFP:hover{
+  background: rgb(235, 35, 35);
+}
+
+#stopFP {
+  border-radius: 15px;
+  background:rgb(161, 13, 13);;
+  padding: 0px;
+  width: 100px;
+  height: 50px;
+  color: aliceblue;
+  margin: 1%;
+  /* float: left; */
+}
+
+#stopFP:hover{
   background: rgb(235, 35, 35);
 }
