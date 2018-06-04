@@ -27,7 +27,8 @@
             ],
             "scripts": [
               "./src/assets/voice.js",
-              "./src/assets/callCommands.js"
+              "./src/assets/callCommands.js",
+              "./src/assets/databaseRequests.js"
             ]
           },
           "configurations": {
