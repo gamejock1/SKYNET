@@ -180,5 +180,3 @@ $(document).on('click', '.flightPlanButton', function(event) {
     triggerFlightActions();
   });
 });
-
-
