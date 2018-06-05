@@ -54,8 +54,10 @@ These are things you need to install and setup to run Skynet:
 These are a set of step-by-step set of instructions to how we were able to get the drone to fly using our application:
 
 ```
-Not Applicable
+Coming Soon...for now please enjoy the below image of How It Works........
 ```
+
+![SkynetDiagram](SetupDiagram.png)
 
 ## Running the unit-level tests
 
