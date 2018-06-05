@@ -1,3 +1,5 @@
+let flightPlanActions = [];
+
 // Command Functions
 const takeOff = () => {
   console.log('TAKE OFF!');
@@ -132,3 +134,51 @@ $(document).on('click', '#land', (event) => {
   event.preventDefault();
   land();
 });
+
+
+// FLIGHT PLANS
+// =====================================================
+$(document).on('click', '.flightPlanButton', function(event) {
+  event.preventDefault();
+  let flightPlanId = this.id;
+  $.get('https://skynet-table.herokuapp.com/api/flight-plan-actions/' + flightPlanId, (data) => {
+
+    flightPlanActions = data.flightPlans;
+    console.log(flightPlanActions);
+
+    let triggerFlightActions = () => {
+      for (let i = 0; i < flightPlanActions.length; i++) {
+        if (i !== 0) {
+          console.log('made it this far');
+          setTimeout(flightPlanActions[i-1].action_wait, function() {
+            console.log('waited:', flightPlanActions[i-1].action_wait);
+            switch (flightPlanActions[i].action_type) {
+              case ("takeoff"):
+                takeOff();
+                break;
+              case ("land"):
+                land();
+                break;
+              default:
+                console.log('htf');
+            }
+          });
+        } else {
+          switch (flightPlanActions[i].action_type) {
+            case ("takeoff"):
+              takeOff();
+              break;
+            case ("land"):
+              land();
+              break;
+            default:
+              console.log('htf');
+          }
+        }
+      }
+    };
+    triggerFlightActions();
+  });
+});
+
+
