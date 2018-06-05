@@ -1,19 +1,19 @@
-let flightPlanActions = [];
+let flightPlans = [];
 
-$.get('https://skynet-table.herokuapp.com/api/all-flight-plans-and-actions', (data) => {
+$.get('https://skynet-table.herokuapp.com/api/flight-plans', (data) => {
   console.log(data);
-  flightPlanActions = data.flightPlans;
+  flightPlans = data.flightPlans;
 });
 
 $(document).on('click', '#loadFlightPlans', (event) => {
   event.preventDefault();
   console.log('TRYING TO GENERATE BUTTONS, IT HURTS');
-  console.log(flightPlanActions.length);
-  for (let i = 0; i < flightPlanActions.length; i++) {
+  console.log(flightPlans.length);
+  for (let i = 0; i < flightPlans.length; i++) {
     let flightBtn = $('<button>');
     $(flightBtn).attr('class', 'buttonGeneral');
-    $(flightBtn).attr('data-id', flightPlanActions[i].flight_plan_id);
-    $(flightBtn).text(flightPlanActions[i].flight_plan_name);
+    $(flightBtn).attr('data-id', flightPlans[i].flight_plan_id);
+    $(flightBtn).text(flightPlans[i].flight_plan_name);
     $('#test').append(flightBtn);
   }
 });
