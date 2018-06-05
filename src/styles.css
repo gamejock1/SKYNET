@@ -70,7 +70,7 @@ menu{
   background: rgb(45, 47, 124);
 }
 
-.editFlightPlanNameButton {
+.editFlightPlanNameButton, .editFlightPlanActionButton {
   border-radius: 15px;
   background: rgb(10, 150, 22);
   width: 65px;
@@ -81,11 +81,11 @@ menu{
   top: 14px;
 }
 
-.editFlightPlanNameButton:hover{
+.editFlightPlanNameButton:hover, .editFlightPlanActionButton:hover{
   background: rgb(17, 218, 17);
 }
 
-.deleteFlightPlanNameButton {
+.deleteFlightPlanNameButton, .deleteFlightPlanActionButton {
   border-radius: 15px;
   background:rgb(161, 13, 13);
   width: 28px;
@@ -96,6 +96,6 @@ menu{
   top: 14px;
 }
 
-.deleteFlightPlanNameButton:hover{
+.deleteFlightPlanNameButton:hover, .deleteFlightPlanActionButton:hover{
   background: rgb(235, 35, 35);
 }
