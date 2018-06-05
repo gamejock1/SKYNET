@@ -28,7 +28,8 @@
             "scripts": [
               "./src/assets/voice.js",
               "./src/assets/callCommands.js",
-              "./src/assets/databaseRequests.js"
+              "./src/assets/databaseRequests.js",
+              "./src/assets/flightPlans.js"
             ]
           },
           "configurations": {

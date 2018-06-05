@@ -33,15 +33,20 @@ html{
 }
 
 #insideNavFooter{
- background-color: black;
- background-image: url(assets/terminator_bg.jpg);
- background-position: right;
- background-repeat: no-repeat;
- background-size: contain;
+
  height: 100%;
 }
 
-body, html {
+body {
+  background-color: black;
+  background-image: url(assets/terminator_bg.jpg);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+}
+
+html {
   height: 100%;
 }
 

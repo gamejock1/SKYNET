@@ -3,17 +3,6 @@ h1{
   margin: 0;
 }
 
-/* #video{
-  opacity: .50;
-  width: 600px;
-  height: 400px;
-  background: firebrick;
-  position: absolute;
-  top: 24%;
-  right: 29%;
-}
- */
-
 #chatDisplay {
   height: 354px;
   width: 100%;
@@ -30,6 +19,10 @@ h1{
   width: 80%;
   overflow-y: scroll;
   box-shadow:inset rgb(179, 179, 179) 1px 1px 7px;
+}
+
+#flightPlanDiv {
+  text-align: center;
 }
 
 #microphoneIcon {
@@ -54,16 +47,6 @@ h1{
   box-shadow:inset rgb(179, 179, 179) 1px 1px 7px;
 }
 
-/*#interimTextDisplayLabel {*/
-  /*!* display: none; *!*/
-  /*background: rgb(238, 238, 238);*/
-  /*padding: 4px;*/
-  /*margin: 0;*/
-  /*color: #aaaaaa;*/
-  /*font-style: italic;*/
-  /*border-bottom: 1px solid #aaaaaa;*/
-/*}*/
-
 #leftSide{
   max-width: 50%;
   margin: 6% 0 10% 25%;
@@ -72,10 +55,6 @@ h1{
 #submitToChat {
   background: rgb(35, 36, 94);
 }
-
-/*#manualControls{*/
-  /*!* text-align: center; *!*/
-/*}*/
 
 h4{
   text-align: center;
@@ -117,7 +96,7 @@ h4{
 
 .buttonGeneral {
   border-radius: 15px;
-  background:rgb(21, 15, 59);;
+  background:rgb(21, 15, 59);
   padding: 0;
   width: 100px;
   height: 50px;
@@ -128,7 +107,6 @@ h4{
 .buttonGeneral:hover{
   background: rgb(45, 47, 124);
 }
-
 
 #takeOff {
   border-radius: 15px;
