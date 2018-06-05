@@ -8,7 +8,7 @@ Skynet (brought to you by The Table) is a powerful speech-to-DRONE web applicati
 
 Note: Skynet currently only works on Google Chrome.
 
-![TheCodeDictator](https://commons.wikimedia.org/wiki/File:Terminator-skynet.png)
+![Skynet](Terminator-skynet.png)
 
 ## Getting Started
 
