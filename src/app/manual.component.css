@@ -21,6 +21,10 @@ h1{
   box-shadow:inset rgb(179, 179, 179) 1px 1px 7px;
 }
 
+#flightPlanDiv {
+  text-align: center;
+}
+
 #microphoneIcon {
   max-width: 100px;
   width: 100%;
